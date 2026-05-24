@@ -1,0 +1,53 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 4,
+    "mode": "dock",
+    "exclusive": true,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "network"
+    ],
+    "clock": {
+        "interval": 1,
+        "format": "  {:%I:%M %p}",
+        "tooltip-format": "<big>{:%A, %d %B %Y}</big>"
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰖁  muted",
+        "format-icons": {
+            "headphone": "󰋋",
+            "headset": "󰋎",
+            "portable": "󰦧",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "scroll-step": 2,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "network": {
+        "interface": "enp34s0",
+        "format-wifi": "󰖩  {signalStrength}%",
+        "format-ethernet": "󰈀  Connected",
+        "format-disconnected": "󰖪  Offline",
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ipaddr}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    "tray": {
+        "spacing": 8
+    }
+}
