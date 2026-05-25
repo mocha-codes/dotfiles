@@ -3,11 +3,14 @@
 
 # 2. Allow the .gitignore file itself so changes to your whitelist are tracked
 !.gitignore
+!.gitconfig
 !.bashrc
 
 # 3. If you want to track a file inside a folder (e.g., .config/nvim/init.lua)
 # You must first allow the directory structure, then the file
 !.config/
+!.config/MangoHud/
+!.config/MangoHud/**
 !.config/fastfetch/
 !.config/fastfetch/**
 !.config/hypr/
