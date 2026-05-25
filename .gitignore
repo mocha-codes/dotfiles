@@ -1,25 +1,20 @@
-.cache/
-.local/
-.dotnet/
-.pki/
-.steam/
-.var/
-.vscode/
-.vscode-shared/
-Desktop/
-Documents/
-Downloads/
-Games/
-Music/
-Pictures/
-Projects/
-Public/
-Templates/
-Videos/
-.bash_history
-.bash_logout
-.bash_profile
-.pulse-cookie
-.steampath
-.steampid
-.wget-hsts
+# 1. Ignore absolutely everything by default
+*
+
+# 2. Allow the .gitignore file itself so changes to your whitelist are tracked
+!.gitignore
+!.bashrc
+
+# 3. If you want to track a file inside a folder (e.g., .config/nvim/init.lua)
+# You must first allow the directory structure, then the file
+!.config/
+!.config/fastfetch/
+!.config/fastfetch/**
+!.config/hypr/
+!.config/hypr/**
+!.config/kitty/
+!.config/kitty/**
+!.config/rofi/
+!.config/rofi/**
+!.config/waybar/
+!.config/waybar/**

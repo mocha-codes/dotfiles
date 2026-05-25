@@ -32,7 +32,7 @@ hl.monitor({
 
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "rofi -show drun"
+local menu        = "/home/mocha/.config/rofi/launchers/type-2/launcher.sh"
 
 
 -------------------
@@ -267,7 +267,11 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M",
-    hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+    hl.dsp.exec_cmd(
+        "/home/mocha/.config/rofi/powermenu/type-1/powermenu.sh"))
+-- hl.bind(mainMod .. " + M",
+-- hl.dsp.exec_cmd(
+-- "/home/mocha/.config/rofi/powermenu/type-1/powermenu.sh || command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
@@ -378,4 +382,19 @@ hl.window_rule({
 hl.layer_rule({
     match = { namespace = "waybar" },
     "hideOnFullscreen"
+})
+
+hl.window_rule({
+    name   = "genshin-launcher-float",
+    match  = { class = "^steam_app_2616605067$", },
+    float  = true,
+    center = true,
+})
+
+hl.window_rule({
+    name  = "pulseaudio",
+    match = { class = "org.pulseaudio.pavucontrol", },
+    float = true,
+    size  = { 800, 600 },
+    move  = { 1110, 40 },
 })
